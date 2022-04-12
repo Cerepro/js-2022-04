@@ -42,7 +42,7 @@ In der HTML-Datei, `html-lektion1.html` findest du bereits ein erstes HTML Konst
 
 Durch das Erstellen all der neuen HTML-Komponenten, sollte deine App nun ungefähr so aussehen:
 <p>
-  <img src="img/HTML1-Aufgabe1.png" width="300" height="150" />
+  <img src="img/html1-aufgabe1.png" width="300" height="150" />
 </p>
 </details>
 
@@ -72,7 +72,7 @@ Als Nächstes fügen wir die folgenden Abschnitte hinzu:
 
 Durch das Erstellen all der neuen HTML-Komponenten, sollte deine App nun ungefähr so aussehen:
 <p>
-  <img src="img/HTML1-Aufgabe2.png" width="250" height="400" />
+  <img src="img/html1-aufgabe2.png" width="250" height="400" />
 </p>
 </details>
 
@@ -101,7 +101,7 @@ Dies geschieht mithilfe von `<section>`-Tags.
 Die App hat sich jetzt zwar kaum verändert, aber es gehört nun mal zu den best-practices, die App in 
 verschiedene Bereiche einzuteilen. <br><br>
 <p>
-  <img src="img/HTML1-Endergebnis.png" width="250" height="400" />
+  <img src="img/html1-Endergebnis.png" width="250" height="400" />
 </p>
 </details>
 
