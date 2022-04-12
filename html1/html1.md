@@ -101,7 +101,7 @@ Dies geschieht mithilfe von `<section>`-Tags.
 Die App hat sich jetzt zwar kaum verändert, aber es gehört nun mal zu den best-practices, die App in 
 verschiedene Bereiche einzuteilen. <br><br>
 <p>
-  <img src="img/html1-Endergebnis.png" width="250" height="400" />
+  <img src="img/html1-endergebnis.png" width="250" height="400" />
 </p>
 </details>
 
