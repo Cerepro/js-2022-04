@@ -1,4 +1,3 @@
-
 ![](https://us-central1-progress-markdown.cloudfunctions.net/progress/50)
 <h1 align="center">HTML</h1>
 <h3 align="center">Lektion 1</h3>
@@ -8,17 +7,17 @@
   <img src="img/meme-html1.png" width="400" height="400" />
 </p>
 
-####Beschreibung:
+#### Beschreibung:
 
 - Dies ist deine erste Coding-Challenge!
 - In dieser Lektion erstellen wir einen Prototyp der Einkaufslisten-App 🛒.
 
-####Hinweise zur Bearbeitung:
+#### Hinweise zur Bearbeitung:
 
 - Achte auf einen sauberen Quellcode, insbesondere Einrückungen sind wichtig.
 - Die App kann nach deiner eigenen Vorstellung angepasst werden. Sei kreativ!
 - Die Antwort zu jedem Problem lässt sich durch die richtige Suche im Web finden.
-- Wenn du Hilfe brauchst, frage gerne Google, andere Teilnehmer oder die Tutoren. Es gibt keine dumme Fragen.
+- Wenn du Hilfe brauchst, frage gerne Google, andere Teilnehmer oder die Tutoren. Es gibt keine dummen Fragen!
 
 ---
 
