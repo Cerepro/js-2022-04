@@ -17,3 +17,4 @@ Das Endergebnis des HTML-Teils kann z.B. so aussehen:
 Die JavaScript-Entwicklungsschritte befinden sich in den Verzeichnissen "lektion1" bis "lektion10" 
 
 Die Aufgabe der Kursteilnehmer ist es, die Einkaufsliste jeden Tag ein wenig weiterzuentwickeln.
+ReadMe geändert.
