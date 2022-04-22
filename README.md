@@ -3,7 +3,6 @@ Dieses Repository enthält den HTML- und JavaScript-Code für die Einkaufsliste,
 ![JavaScript Ergebnis](img/Einkaufsliste.png)
 
 Die HTML-Entwicklungsschritte sind in den Dateien "html1.html" und "html2.html" enthalten.
-
 Die HTML-Aufgaben befinden sich hier:  
 [html1.md](html1/html1.md)  
 
