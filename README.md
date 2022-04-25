@@ -6,6 +6,7 @@ Die HTML-Entwicklungsschritte sind in den Dateien "html1.html" und "html2.html" 
 Die HTML-Aufgaben befinden sich hier:  
 [html1.md](html1/html1.md)  
 
+
 <details>
 <summary>Endergebnis HTML</summary>
 Das Endergebnis des HTML-Teils kann z.B. so aussehen:
