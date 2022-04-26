@@ -20,3 +20,6 @@ Die JavaScript-Entwicklungsschritte befinden sich in den Verzeichnissen "lektion
 
 Die Aufgabe der Kursteilnehmer ist es, die Einkaufsliste jeden Tag ein wenig weiterzuentwickeln.
 ReadMe geändert.
+
+
+Test Änderung 
