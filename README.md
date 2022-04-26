@@ -10,7 +10,7 @@ Die HTML-Aufgaben befinden sich hier:
 
 <details>
 
-<summary>Endergebnis HTML</summary>
+<summary>Endergebnis</summary>
 Das Endergebnis des HTML-Teils kann z.B. so aussehen:
 
 ![HTML Ergebnis](img/Stufe5.png)
