@@ -71,7 +71,7 @@ werden kann.
 
 Durch das Ausführen der Datei test4.js soll folgendes auf der Konsole ausgegeben werden:
 <p>
-  <img src="img/lektion4_aufgabe2.png" width="250" height="65"/>
+  <img src="img/lektion4_aufgabe2.png" width="250" height="100"/>
 </p>
 
 </details>
