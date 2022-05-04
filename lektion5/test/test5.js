@@ -1,7 +1,6 @@
 import {
     artikelAuflisten, allesAuflisten, artikelEntfernen, sortieren
-} from "../loesung/loesung5.js"
-
+} from "../js/aufgaben/lektion5.js"
 
 function teste_artikelAuflisten() {
     console.debug("Aufgabe 1 ----------------------")
