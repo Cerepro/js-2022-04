@@ -62,7 +62,8 @@ function aufgabe5() {
 }
 
 /**
- * 6) Schreibe deine do while Schleife
+ * 6) Wir erstellen wieder durch let das Array und füllen dieses mit den gewünschten Daten. Anschließend geben wir den
+ * gewünschten Wert durch den Index aus (also durch die eckigen Klammern).
  */
 function aufgabe6() {
   console.debug("Aufgabe 6 ==========================");
