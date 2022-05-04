@@ -25,18 +25,13 @@ function allesAuflisten () {
   let getreideListe = ["Reis", "Nudeln", "Quinoa"]
   let milchListe = ["Streukäse", "Sahne", "Joghurt"]
 
-  // gruppenListe: []
-  gruppenListe.push(gemueseListe) // gruppenListe = gruppenListe + gemueseListe
 
-  // gruppenListe: [ ["Brokkoli", "Zwiebeln", "Salat"] ]
+  gruppenListe.push(gemueseListe)
 
-  gruppenListe.push(getreideListe) // gruppenListe = gruppenListe + getreideListe
-
-  // gruppenListe: [ ["Brokkoli", "Zwiebeln", "Salat"], ["Reis", "Nudeln", "Quinoa"] ]
+  gruppenListe.push(getreideListe)
 
   gruppenListe.push(milchListe)
 
-  // gruppenListe: [ ["Brokkoli", "Zwiebeln", "Salat"], ["Reis", "Nudeln", "Quinoa"], ["Streukäse", "Sahne", "Joghurt"] ]
   console.debug(gruppenListe.length)
   for (let i = 0; i < gruppenListe.length; i++) {
     console.debug("Gruppe #", i, gruppenListe[i])
@@ -48,27 +43,20 @@ function allesAuflisten () {
  * auf der Konsole aus
  */
 function artikelEntfernen () {
-  // Arrays definieren (Punkt 1 und 2)
+
   let gemueseListe = ["Brokkoli", "Zwiebeln", "Salat"]
   let gruppenListe = []
 
-  // gemueseListe -> gruppenListe (Punkt 2)
-  gruppenListe.push(gemueseListe) // gruppenListe = gruppenListe + gemueseListe
+  gruppenListe.push(gemueseListe)
 
-  // Ausgabe zur Kontrolle (Punkt 3)
+
   console.debug(gemueseListe)
   let abbruch = gemueseListe.length
-  // Punkt 4
-  // " ... Baue eine for-i-Schleife über die gemueseListe ..."
-  // for (let i = 0; i < gemueseListe.length; i++) {
-  // for (let i = 0; i < gruppenListe[0].length; i++) {
+
   for (let i = 0; i < abbruch; i++) {
-    // " ... entferne das jeweils 1. Element mit splice(0, 1) ...  "
     gemueseListe.splice(0, 1)
     console.debug(gemueseListe)
   }
-  // Punkt 5
-  // Gib den Inhalt der gemueseListe nochmals auf der Konsole aus.
   console.debug(gemueseListe)
 }
 
