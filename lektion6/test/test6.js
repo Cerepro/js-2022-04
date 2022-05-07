@@ -1,5 +1,5 @@
 import { gruppenListe, aktiveGruppe,
-    gruppeFinden, gruppeHinzufuegen, gruppeUmbenennen, gruppeEntfernen } from "../loesung/loesung6.js"
+    gruppeFinden, gruppeHinzufuegen, gruppeUmbenennen, gruppeEntfernen } from "../js/lektion6.js"
 
 /**
  * Testet `gruppeFinden()` mit verschiedenen 'gruppenName'
@@ -87,7 +87,7 @@ function teste_gruppeEntfernen() {
  * Hauptfunktion, in der die Aufgaben aufgerufen werden
  */
 function main() {
-    console.debug("[Tag 5] ============================")
+    console.debug("[Lektion 6] ============================")
     teste_gruppeFinden()
     teste_gruppeHinzufuegen()
     teste_gruppeUmbenennen()
