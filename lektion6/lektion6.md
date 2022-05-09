@@ -15,8 +15,8 @@
 
 #### Hinweise zur Bearbeitung:
 
-- Die Datei `lektion5.js` soll für diese Lektion bearbeitet werden in `"lektion5/js/lektion5.js"`
-- Das Testen der Aufgaben funktioniert über die Datei `test5.js` in `"lektion5/test/test5.js"`. Diese kann bei Bedarf um
+- Die Datei `lektion6.js` soll für diese Lektion bearbeitet werden in `"lektion6/js/lektion6.js"`
+- Das Testen der Aufgaben funktioniert über die Datei `test6.js` in `"lektion6/test/test6.js"`. Diese kann bei Bedarf um
 weitere Tests ergänzt werden.
 - Achte auf einen sauberen Quellcode, insbesondere Einrückungen sind wichtig!
 - Die App kann nach deiner eigenen Vorstellung angepasst werden. Sei kreativ!
