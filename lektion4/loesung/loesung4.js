@@ -9,7 +9,6 @@ function artikel_Gekauft() {
         console.debug("[Artikel] \"" + artikelName + "\" wurde gekauft")
     }
 }
-
 /**
  * 2) Erstelle eine if-Abfrage, die in der Kosole ausgibt, dass ein Artikel hinzugefügt wurde,
  * falls der `artikelName` NICHT leer ist.
