@@ -13,7 +13,7 @@
 #### Hinweise zur Bearbeitung:
 
 - Die Datei `Gruppe.js` und `Artikel.js` soll für diese Lektion bearbeitet werden in `"js/Gruppe.js"` und "js/Artikel.js"`
-- Das Testen der Aufgaben funktioniert über die Datei `test8.js` in `"lektion7/test/test8.js"`. Diese kann bei Bedarf um
+- Das Testen der Aufgaben funktioniert über die Datei `test8.js` in `"lektion7/test/test7.js"`. Diese kann bei Bedarf um
   weitere Tests ergänzt werden.
 - Achte auf einen sauberen Quellcode, insbesondere Einrückungen sind wichtig!
 - Die App kann nach deiner eigenen Vorstellung angepasst werden. Sei kreativ!
@@ -34,7 +34,10 @@ So soll eine eindeutige id erzeugt werden, die für react benötigt wird.<br> <b
 1. Erstelle eine Klasse mit dem namen `Artikel`
 2. Erstelle einen Konstruktor mit den Parametern `name` und `position`. Füge außerdem als weitere properties `gekauft`und `id` hinzu.
 3. Erstelle oberhalb des Konstruktors die Variable `counter`. Dieser soll der Wert `1` zugewiesen werden. Außerdem soll der `id` (innerhalb des Kosntruktors)
-   dieser `counter` zugewiesen werden und gleichzeitig um eins erhöht werden.
+   dieser `counter` zugewiesen werden und gleichzeitig um eins erhöht werden. Das Zuweisen und Erhöhen kann über folgenden Code innerhalb des Konstruktors erreicht werden: 
+```
+this.id = Artikel.counter++
+```
 4. Füge ans Ende der Klasse folgenden Code hinzu:
    ```
    export {Artikel}
@@ -81,7 +84,7 @@ ___
 <details>
 <summary>Aufgabe 3</summary>
 
-Erstelle nun innerhalb der Klasse `Gruppe` die Methode `artikelAuflisten`, die als Paramater einen boolean-wert  `gekauft` nimmt. Dieser steuert die Anzeige, der bereits gekauften oder noch zu kaufenden Artikel.
+Erstelle nun innerhalb der Klasse `Gruppe` die Methode `artikelAuflisten`, die als Parameter einen boolean-wert  `gekauft` nimmt. Dieser steuert die Anzeige, der bereits gekauften oder noch zu kaufenden Artikel.
 Diese Funktion gibt alle Gruppen aus der `gruppenListe` und ihre Artikel auf der Konsole aus. Verwende dafür eine 
 for-of-Schleife
 
