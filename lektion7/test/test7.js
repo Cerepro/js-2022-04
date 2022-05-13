@@ -1,6 +1,6 @@
-import {Gruppe} from "../../js/Gruppe.js"
-import {Artikel} from "../../js/Artikel.js"
-import {Shopping} from "../../js/Shopping.js"
+import Gruppe from "../../js/Gruppe.js"
+import Artikel from "../../js/Artikel.js"
+import Shopping from "../../js/Shopping.js"
 
 
 function teste_artikelAuflisten() {
@@ -12,7 +12,7 @@ function teste_artikelAuflisten() {
   let cola = new Artikel("cola", 3)
   let alkoholfreieGetraenke = new Gruppe("Alkoholfreie Getränke", 1)
   alkoholfreieGetraenke.artikelListe = [saft, wasser, cola]
-  alkoholfreieGetraenke.artikelAuflisten()
+  alkoholfreieGetraenke.artikelAuflisten(false)
 }
 
 function teste_gruppeFinden() {

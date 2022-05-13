@@ -1,9 +1,16 @@
-import Gruppe from "./src/model/Gruppe.js";
+import Gruppe from "./Gruppe.js";
+import {gruppeFinden, gruppenListe} from "../lektion6/loesung/loesung6.js";
 
 class Shopping {
-  gruppenListe = []
-  aktiveGruppe = null
-  meldungenAusgeben = true
+  gruppenListe
+  aktiveGruppe
+  meldungenAusgeben
+
+  constructor() {
+    this.gruppenListe = []
+    this.aktiveGruppe = null
+    this.meldungenAusgeben = true
+  }
 
   gruppeFinden(suchName, meldungenAusgeben) {
     for (let gruppe of this.gruppenListe) {
@@ -27,7 +34,25 @@ class Shopping {
       this.informieren("[App Gruppe\"" + name + "\"schon vorhanden]")
     }
   }
+  gruppeUmbenennen(alterName, neuerName) {
+    let vorhandeneGruppe = gruppeFinden(alterName)
+    if (vorhandeneGruppe != null) {
+      let index = gruppenListe.indexOf(alterName)
+      gruppenListe[index] = neuerName
+      console.debug("Gruppe von \"" + alterName + "\" nach \"" + neuerName + "\" umbenannt")
+    }
+  }
 
+  gruppeEntfernen(gruppenName) {
+    let entfernGruppe = gruppeFinden(gruppenName)
+    if (entfernGruppe != null) {
+      let index = gruppenListe.indexOf(entfernGruppe)
+      this.gruppenListe.splice(index, 1)
+      console.debug("[App] Gruppe \"" + gruppenName + "\" entfernt")
+    } else {
+      console.warn("Gruppe \"" + gruppenName + "\" konnte NICHT entfernt werden")
+    }
+  }
   informieren(nachricht, istWarnung = false) {
     if (this.meldungenAusgeben) {
       if (istWarnung) {
@@ -40,13 +65,4 @@ class Shopping {
   }
 }
 
-const App = new Shopping()
-let früchte = App.gruppeHinzufuegen("Früchte")
-console.debug(früchte)
-let früchte2 = App.gruppeHinzufuegen("Früchte")
-
-let früchteGruppe = App.gruppeFinden("früchte")
-console.debug(früchteGruppe)
-
-
-export default App
+export default Shopping
