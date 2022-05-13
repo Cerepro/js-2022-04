@@ -19,12 +19,12 @@ class Shopping {
     // gruppeFinden
     let vorhandeneGruppe = this.gruppeFinden(name)
     if (vorhandeneGruppe == null) {
-      let neueGruppe = new Gruppe(name.gruppenListe.length)
+      let neueGruppe = new Gruppe(name, this.gruppenListe.length)
       this.gruppenListe.push(neueGruppe)
-      this.informieren("[App]")
+      this.informieren("[App Gruppe\"" + name + "\"angelegt]")
       return neueGruppe
     } else {
-      console.debug("Gruppe: ", name, " schon vorhanden")
+      this.informieren("[App Gruppe\"" + name + "\"schon vorhanden]")
     }
   }
 
@@ -32,7 +32,7 @@ class Shopping {
     if (this.meldungenAusgeben) {
       if (istWarnung) {
         console.log(nachricht)
-      }else {
+      } else {
         console.debug(nachricht)
         // ToDo: Speichern
       }
