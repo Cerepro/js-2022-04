@@ -40,7 +40,7 @@ function teste_gruppeFinden() {
 function main() {
   console.debug("[Lektion 7] ============================")
   teste_artikelAuflisten()
-  //teste_gruppeFinden()
+  teste_gruppeFinden()
 
 }
 main()

@@ -16,7 +16,7 @@ class Gruppe {
   }
   artikelAuflisten(gekauft) {
     for (let artikel of this.artikelListe){
-      if (artikel.gekauft == Gekauft) {
+      if (artikel.gekauft == gekauft) {
         console.debug(artikel.name)
       }
     }

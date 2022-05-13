@@ -32,7 +32,7 @@ So soll eine eindeutige id erzeugt werden, die für react benötigt wird.<br> <b
 
 **Pseudocode:**
 1. Erstelle eine Klasse mit dem namen `Artikel`
-2. Erstelle einen Konstruktor mit den Parametern `name` und `position`. Füge außerdem als weitere properties `gekauft`und `id` hinzu.
+2. Erstelle einen Konstruktor mit den Parametern `name` und `position`. Füge außerdem als weitere properties `gekauft`und `id` hinzu. gekauft soll mit `false` initalisiert werden
 3. Erstelle oberhalb des Konstruktors die Variable `counter`. Dieser soll der Wert `1` zugewiesen werden. Außerdem soll der `id` (innerhalb des Kosntruktors)
    dieser `counter` zugewiesen werden und gleichzeitig um eins erhöht werden. Das Zuweisen und Erhöhen kann über folgenden Code innerhalb des Konstruktors erreicht werden: 
 ```
@@ -72,8 +72,8 @@ dieser `counter` zugewiesen werden und um eins erhöht werden.
    Methoden zu testen
 5. Füge folgenden import dem Anfang der Klasse hinzu: 
 ```
-import Artikel from './Artikel'
-import Shopping from './Shopping'
+import {Artikel} from './Artikel'
+import {Shopping} from './Shopping'
 ```
 
 </details>
@@ -89,7 +89,7 @@ Diese Funktion gibt alle Gruppen aus der `gruppenListe` und ihre Artikel auf der
 for-of-Schleife
 
 **Pseudo-Code:**
-1. Schreibe eine Funktion mit dem Namen `ArtikelAuflisten` mit dem Parameter `gekauft`.
+1. Schreibe eine Funktion mit dem Namen `artikelAuflisten` mit dem Parameter `gekauft`.
 2. Erstelle eine for-of-Schleife, die durch die `artikelListe` geht. 
 3. für jedes Element der `artikelListe`, soll nun mithilfe einer if-Abfrage überprüft werden, ob `gekauft` gleich `gekauft` ist 
 und wenn dies der Fall ist, soll der Artikel ausgegeben werden  <br><br> **Hinweis:** innerhalb der Klasse, können die Elemente wie folgt ausgegeben werden:
