@@ -13,7 +13,7 @@ class Shopping {
    */
   gruppeFinden(suchName, meldungAusgeben) {
     for (let gruppe of this.gruppenListe) {
-      if (gruppe.name.toLowerCase() == suchName.toLowerCase()) {
+      if (gruppe.name == suchName) {
         return gruppe
       }
     }
@@ -44,6 +44,55 @@ class Shopping {
   }
 
   /**
+   * Entfernt die Gruppe mit dem `name`
+   * @param {String} name - Name der zu löschenden Gruppe
+   */
+  gruppeEntfernen(name) {
+    // gruppe 'name' finden
+    let loeschGruppe = this.gruppeFinden(name)
+    if (loeschGruppe) {
+      // wenn gefunden, dann index ermitteln
+      let index = this.gruppenListe.indexOf(loeschGruppe)
+      // mit splice aus der gruppenListe löschen
+      this.gruppenListe.splice(index, 1)
+      // informieren über erfolg
+      this.informieren("[App] Gruppe \"" + name + "\" entfernt"
+      )
+    } else {
+      this.informieren("[App] Gruppe \"" + name + "\" konnte NICHT entfernt werden!", true)
+    }
+    // ansonsten warnung ausgeben
+  }
+
+  /**
+   * Benennt die Gruppe `alterName` um
+   * @param {String} alterName - Name der umzubenennenden Gruppe
+   * @param {String} neuerName - der neue Name der Gruppe
+   */
+  gruppeUmbenennen(alterName, neuerName) {
+    // suchGruppe finden
+    let suchGruppe = this.gruppeFinden(alterName, true)
+    // wenn gefunden, dann suchGruppe umbenenen
+    if (suchGruppe) {
+      suchGruppe.name = neuerName
+      // erfolgsmedung ausgeben
+      this.informieren("[App] Gruppe \"" + alterName + "\" umbenannt in \"" + neuerName + "\"")
+    }
+  }
+
+  /**
+   * Gibt die Gruppen mit Artikeln auf der Konsole aus
+   */
+  allesAuflisten() {
+    console.debug("Einkaufsliste")
+    console.debug("--------------------")
+    for (const gruppe of this.gruppenListe) {
+      console.debug("[" + gruppe.name + "]")
+      gruppe.artikelAuflisten(false)
+    }
+  }
+
+  /**
    * Gibt eine Meldung aus und speichert den aktuellen Zustand im LocalStorage
    * @param {String} nachricht - die auszugebende Nachricht
    * @param {boolean} istWarnung - steuert, ob die {@link nachricht} als Warnung ausgegeben wird
@@ -61,4 +110,5 @@ class Shopping {
 }
 
 const App = new Shopping()
+
 export default App
