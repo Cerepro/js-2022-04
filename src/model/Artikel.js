@@ -12,7 +12,7 @@ class Artikel {
   id = Artikel.counter++
   index
   name
-  gekauft = true
+  gekauft = false
 
   constructor(name, index) {
     this.name = name
