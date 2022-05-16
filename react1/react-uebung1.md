@@ -3,6 +3,9 @@
 <h3 align="center">Übung 1</h3>
 <br>
 
+<p align="center">
+  <img src="img/meme-react1.png" width="410" height="400"/>
+</p>
 
 
 #### Beschreibung:
