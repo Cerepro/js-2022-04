@@ -43,6 +43,7 @@ class Shopping {
     }
   }
 
+
   gruppeEntfernen(gruppenName) {
     let entfernGruppe = gruppeFinden(gruppenName)
     if (entfernGruppe != null) {
