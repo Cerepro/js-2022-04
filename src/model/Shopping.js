@@ -1,5 +1,12 @@
 import Gruppe from './Gruppe.js'
 
+/**
+ * Diese Klasse steuert das Modell der ShoppingList
+ *
+ * @property {Gruppe[]} gruppenListe      - enthält die Artikelgruppen
+ * @property {Gruppe}   aktiveGruppe      - enthält die aktuell ausgewählte Gruppe
+ * @property {boolean}  meldungenAusgeben - steuert, ob eine Meldung ausgegeben werden soll oder nicht
+*/
 class Shopping {
   gruppenListe = []
   aktiveGruppe = null
@@ -32,7 +39,7 @@ class Shopping {
   gruppeHinzufuegen(name) {
     // gruppeFinden
     let vorhandeneGruppe = this.gruppeFinden(name)
-    if (vorhandeneGruppe == null) {
+    if (!vorhandeneGruppe) {
       let neueGruppe = new Gruppe(name, this.gruppenListe.length)
       this.gruppenListe.push(neueGruppe)
       this.aktiveGruppe = neueGruppe
