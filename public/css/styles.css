@@ -1,5 +1,5 @@
 #root {
-    width: 20rem;
+    width: 23rem;
     background-image: url("../img/markt.jpg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -30,6 +30,7 @@ h2 {
 }
 i.material-icons {
     cursor: pointer;
+    float: right;
 }
 button.material-icons {
     font-size: inherit;
@@ -58,6 +59,8 @@ dd {
 }
 dd label {
     padding: 3px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 dd label input[type="checkbox"] {
     margin: 6px 6px;

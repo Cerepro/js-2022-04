@@ -6,10 +6,19 @@ class ArtikelTag extends React.Component {
   }
 
   render() {
+    const artikel = this.props.artikel
+    let artikelName = artikel.name
+    if (artikel.gekauft) {
+      artikelName = <s>{artikel.name}</s>
+    }
+
     return (
       <React.Fragment>
         {/* ToDo: füge hier drunter Deinen HTML-Code ein */}
-        Füge hier Deinen ArtikelTag-Code<br/>
+        <dd><label>
+          <input type="checkbox"/>
+          {artikelName}
+        </label></dd>
       </React.Fragment>
     )
   }
