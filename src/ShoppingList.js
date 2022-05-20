@@ -7,6 +7,12 @@ class ShoppingList extends React.Component {
   }
 
   render() {
+    console.debug(App.gruppenListe)
+    let filmArray = []
+    for (const gruppe of App.gruppenliste) {
+      filmArray.push(<)
+
+    }
     return (
       //füge hier deinen HTML-Code ein
       <div id="container">
