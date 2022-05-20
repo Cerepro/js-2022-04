@@ -40,7 +40,12 @@
 
   //ToDo: Schreibe hier deine Klasse Tag!
 class Tag extends React.component{
-
+  render () {
+    return (<H1>Heute ist es sehr Warm!</H1>)
+  }
+}
+function welcome(props)  {
+  return <h1>Hallo {props.name}</h1>
 }
   const element2 = <Tag />;
   ReactDOM.render(
@@ -55,8 +60,12 @@ class Tag extends React.component{
 <script type="text/babel">
 
   //ToDo: Schreibe hier deine Funktion mit props! Vergesse nicht, deinen Namen unten zu schreiben!
+function Hey(props){
+ return <h2>Hey {props.name}</h2>
+  }
 
-  const element3 = <Hey name="//ToDo: Schreibe hier deinen Namen" />;
+
+  const element3 = <Hey Patrick  />;
   ReactDOM.render(
     element3,
     document.getElementById(`root3`)
@@ -69,6 +78,14 @@ class Tag extends React.component{
 <script type="text/babel">
 
   //ToDo: Schreibe hier deine Funktion "Wiederholt"!
+  function Wiederholt(){
+    return <div>
+      <Hey name="Nicole"/>
+      <Hey name="Jasmin"/>
+      <Hey name="Tanja"/>
+    </div>
+  }
+
 
   const element4 = <Wiederholt />;
   ReactDOM.render(
@@ -83,8 +100,17 @@ class Tag extends React.component{
 <script type="text/babel">
 
   //ToDo: Schreibe hier deine Klasse mit props! Vergesse nicht, deinen Namen unten zu schreiben!
+  class Vorname extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render (){
+      return (<h2>Du wirst langsam echt gut in React Patrick!</h2>)
+    }
 
-  const element5 = <Vorname name="//ToDO: Schreibe hier deinen Namen" />;
+  }
+
+  const element5 = <App />;
   ReactDOM.render(
     element5,
     document.getElementById(`root5`)
