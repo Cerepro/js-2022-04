@@ -11,23 +11,23 @@ class Calculator extends React.Component {
 
     handleCelsiusChange(temperature) {
         /* ToDO: Setze hier den State neu */
-        this.setState({scale: 'c', temperature});
+
     }
 
     handleFahrenheitChange(temperature) {
         /* ToDO: Setze hier den State neu */
-        this.setState({scale: 'f', temperature});
+
     }
 
     render() {
         /* ToDO: Verwende hier das Attribut scale aus dem State anstatt des festen Werts '0'*/
-        const scale = this.state.scale;
+        const scale = '0';
         /* ToDO: Verwende hier das Attribut temperature aus dem State anstatt des festen Werts 0*/
-        const temperature = this.state.temperature;
+        const temperature = 0;
         let celsius, fahrenheit = temperature
 
         /* ToDO: Ersetze hier 'true' durch die in der Aufgabe beschriebene Bedingung*/
-        if(scale == 'f'){
+        if(true){
             celsius = tryConvert(temperature, toCelsius)
         }else{
             fahrenheit = tryConvert(temperature, toFahrenheit)
