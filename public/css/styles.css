@@ -12,6 +12,10 @@
     --mdc-theme-primary: #33691E;
     --mdc-theme-secondary: #827717;
 }
+h1 {
+    color:#000000;
+    font-family: "SF Pro Display";
+}
 dt {
     background-color: #7CB342;
     color: var(--mdc-theme-on-primary);
@@ -105,3 +109,7 @@ footer {
     -webkit-font-smoothing: antialiased;
 }
 
+.mdc-text-field {
+    margin-right: 5px;
+    margin-left: 10px;
+    border-radius: 10px 0 10px 0;}
