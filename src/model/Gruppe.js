@@ -1,5 +1,5 @@
 import Artikel from "./Artikel.js"
-import App from "./Shopping.js"
+import Modell from "./Shopping.js"
 
 /**
  * Klasse zum Gruppieren der Artikel
@@ -35,7 +35,7 @@ class Gruppe {
       }
     }
     if (meldungAusgeben) {
-      App.informieren("[" + this.name + "] Artikel " + suchName + " nicht gefunden", true)
+      Modell.informieren("[" + this.name + "] Artikel " + suchName + " nicht gefunden", true)
     }
     return null
   }
@@ -62,10 +62,10 @@ class Gruppe {
     if (!vorhandenerArtikel) {
       let neuerArtikel = new Artikel(name, this.artikelListe.length)
       this.artikelListe.push(neuerArtikel)
-      App.informieren("[" + this.name + "] Artikel " + name + " hinzugefügt")
+      Modell.informieren("[" + this.name + "] Artikel " + name + " hinzugefügt")
       return neuerArtikel
     } else {
-      App.informieren("[" + this.name + "] Artikel " + name + " existiert schon!", true)
+      Modell.informieren("[" + this.name + "] Artikel " + name + " existiert schon!", true)
     }
   }
 
@@ -79,10 +79,10 @@ class Gruppe {
       const index = this.artikelListe.indexOf(loeschArtikel)
       this.artikelListe.splice(index, 1)
       this.artikelNeuNummerieren()
-      App.informieren("[" + this.name + "] Artikel \"" + name + "\" entfernt"
+      Modell.informieren("[" + this.name + "] Artikel \"" + name + "\" entfernt"
       )
     } else {
-      App.informieren("[" + this.name + "] Artikel \"" + name + "\" konnte NICHT entfernt werden", true
+      Modell.informieren("[" + this.name + "] Artikel \"" + name + "\" konnte NICHT entfernt werden", true
       )
     }
   }
@@ -107,7 +107,7 @@ class Gruppe {
     if (vorhandenerArtikel) {
       vorhandenerArtikel.name = neuerName
     }
-    App.informieren("[" + this.name + "] Artikel \"" + alterName + "\" umbenannt in \"" + neuerName + "\"")
+    Modell.informieren("[" + this.name + "] Artikel \"" + alterName + "\" umbenannt in \"" + neuerName + "\"")
   }
 }
 

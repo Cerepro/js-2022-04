@@ -1,9 +1,9 @@
 import React from 'react'
 import GruppenTag from './components/GruppenTag'
-import App from './model/Shopping'
+import Modell from './model/Shopping'
 
 
-class ShoppingList extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props)
     this.initialisieren()
@@ -17,15 +17,15 @@ class ShoppingList extends React.Component {
   }
 
   initialisieren() {
-    let fantasy = App.gruppeHinzufuegen("Fantasy")
+    let fantasy = Modell.gruppeHinzufuegen("Fantasy")
     let film1 = fantasy.artikelHinzufuegen("Der Dunkle Kristall")
     film1.gekauft = true
     fantasy.artikelHinzufuegen("Die Barbaren")
-    let scifi = App.gruppeHinzufuegen("Science Fiction")
+    let scifi = Modell.gruppeHinzufuegen("Science Fiction")
     let film2 = scifi.artikelHinzufuegen("Alita - Battle Angel")
     film2.gekauft = true
     scifi.artikelHinzufuegen("Mad Max - Fury Road")
-    let dokus = App.gruppeHinzufuegen("Dokumentationen")
+    let dokus = Modell.gruppeHinzufuegen("Dokumentationen")
     let film3 = dokus.artikelHinzufuegen("Endgame - Blaupause für die Globale Versklavung")
     film3.gekauft = true
     dokus.artikelHinzufuegen("Die Kabale")
@@ -37,24 +37,37 @@ class ShoppingList extends React.Component {
   }
 
   erledigtAufZuKlappen() {
-  // ToDo: fertig programmieren
+    // ToDo: fertig programmieren
+  }
+
+  // ToDo: diese Methode als 'checkHandler' an GruppenTag und ArtikelTag durchreichen
+  artikelChecken = (artikel) => {
+    // artikel.gekauft 'umpolen'
+    // 'aktion' abhängig von 'artikel.gekauft' auf "erledigt" oder "reaktiviert" setzen
+    // App.informieren mit 'aktion'
+    // 'state' aktualisieren
+  }
+
+  setAktiveGruppe(gruppe) {
+    // ToDo:
   }
 
   render() {
     let nochZuKaufen = []
     if (this.state.einkaufenAufgeklappt == true) {
-      for (const gruppe of App.gruppenListe) {
+      for (const gruppe of Modell.gruppenListe) {
         nochZuKaufen.push(<GruppenTag
           key={gruppe.id}
           gruppe={gruppe}
-          gekauft={false}/>)
+          gekauft={false}
+          aktiveGruppeHandler={() => this.setAktiveGruppe(gruppe)}/>)
       }
     }
 
 
     let schonGekauft = []
     // ToDo: Bedingung  mit 'erledigtAufgeklappt' programmieren
-    for (const gruppe of App.gruppenListe) {
+    for (const gruppe of Modell.gruppenListe) {
       schonGekauft.push(<GruppenTag
         key={gruppe.id}
         gruppe={gruppe}
@@ -123,4 +136,4 @@ class ShoppingList extends React.Component {
   }
 }
 
-export default ShoppingList
+export default App
