@@ -1,9 +1,9 @@
 import React from 'react'
 import GruppenTag from './components/GruppenTag'
-import App from './model/Shopping'
+import Modell from './model/Shopping'
 
 
-class ShoppingList extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props)
     this.initialisieren()
@@ -17,18 +17,18 @@ class ShoppingList extends React.Component {
   }
 
   initialisieren() {
-    let fantasy = App.gruppeHinzufuegen("Gemüse")
-    let film1 = fantasy.artikelHinzufuegen("Brokkoli")
+    let fantasy = Modell.gruppeHinzufuegen("Fantasy")
+    let film1 = fantasy.artikelHinzufuegen("Der Dunkle Kristall")
     film1.gekauft = true
-    fantasy.artikelHinzufuegen("Blumenkohl")
-    let scifi = App.gruppeHinzufuegen("Getreide Produkte")
-    let film2 = scifi.artikelHinzufuegen("Vollkorn Nudeln")
+    fantasy.artikelHinzufuegen("Die Barbaren")
+    let scifi = Modell.gruppeHinzufuegen("Science Fiction")
+    let film2 = scifi.artikelHinzufuegen("Alita - Battle Angel")
     film2.gekauft = true
-    scifi.artikelHinzufuegen("Reis")
-    let dokus = App.gruppeHinzufuegen("Getränke")
-    let film3 = dokus.artikelHinzufuegen("Wasser")
+    scifi.artikelHinzufuegen("Mad Max - Fury Road")
+    let dokus = Modell.gruppeHinzufuegen("Dokumentationen")
+    let film3 = dokus.artikelHinzufuegen("Endgame - Blaupause für die Globale Versklavung")
     film3.gekauft = true
-    dokus.artikelHinzufuegen("Rot Wein lieblich")
+    dokus.artikelHinzufuegen("Die Kabale")
   }
 
   einkaufenAufZuKlappen() {
@@ -38,37 +38,47 @@ class ShoppingList extends React.Component {
 
   erledigtAufZuKlappen() {
     // ToDo: fertig programmieren
-    let neuerZustand = !this.state.erledigtAufgeklappt
-    this.setState({erledigtAufgeklappt: neuerZustand})
+  }
+
+  // ToDo: diese Methode als 'checkHandler' an GruppenTag und ArtikelTag durchreichen
+  artikelChecken = (artikel) => {
+    // artikel.gekauft 'umpolen'
+    // 'aktion' abhängig von 'artikel.gekauft' auf "erledigt" oder "reaktiviert" setzen
+    // App.informieren mit 'aktion'
+    // 'state' aktualisieren
+  }
+
+  setAktiveGruppe(gruppe) {
+    // ToDo:
   }
 
   render() {
     let nochZuKaufen = []
-    if (this.state.einkaufenAufgeklappt ) {
-      for (const gruppe of App.gruppenListe) {
+    if (this.state.einkaufenAufgeklappt == true) {
+      for (const gruppe of Modell.gruppenListe) {
         nochZuKaufen.push(<GruppenTag
           key={gruppe.id}
           gruppe={gruppe}
-          gekauft={false}/>)
+          gekauft={false}
+          aktiveGruppeHandler={() => this.setAktiveGruppe(gruppe)}/>)
       }
     }
 
 
     let schonGekauft = []
     // ToDo: Bedingung  mit 'erledigtAufgeklappt' programmieren
-    if (this.state.erledigtAufgeklappt ) {
-      for (const gruppe of App.gruppenListe) {
-        schonGekauft.push(<GruppenTag
-          key={gruppe.id}
-          gruppe={gruppe}
-          gekauft={true}/>)
-      }
+    for (const gruppe of Modell.gruppenListe) {
+      schonGekauft.push(<GruppenTag
+        key={gruppe.id}
+        gruppe={gruppe}
+        gekauft={true}/>)
     }
+
     return (
       <div id="container">
         {/* ToDo: füge hier drunter Deinen HTML-Code ein */}
         <header>
-          <h1>Einkaufsliste</h1>
+          <h1>Watchlist</h1>
           <label
             className="mdc-text-field mdc-text-field--filled mdc-text-field--with-trailing-icon mdc-text-field--no-label">
             <span className="mdc-text-field__ripple"></span>
@@ -96,8 +106,8 @@ class ShoppingList extends React.Component {
           <section>
             <h2>Schon gekauft
               {/* ToDo: füge hier drunter Deinen Code ein */}
-              <i onClick={() => this.erledigtAufZuKlappen()} className="material-icons">
-                {this.state.erledigtAufgeklappt ? `expand_more` : `expand_less`}
+              <i className="material-icons">
+                expand_less
               </i>
             </h2>
             <dl>
@@ -126,4 +136,4 @@ class ShoppingList extends React.Component {
   }
 }
 
-export default ShoppingList
+export default App

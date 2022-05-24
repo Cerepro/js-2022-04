@@ -1,7 +1,7 @@
 import Gruppe from './Gruppe.js'
 
 /**
- * Diese Klasse steuert das Modell der ShoppingList
+ * Diese Klasse steuert das Modell der App
  *
  * @property {Gruppe[]} gruppenListe      - enthält die Artikelgruppen
  * @property {Gruppe}   aktiveGruppe      - enthält die aktuell ausgewählte Gruppe
@@ -71,7 +71,7 @@ class Shopping {
     // ansonsten warnung ausgeben
   }
 
-  /**
+    /**
    * Benennt die Gruppe `alterName` um
    * @param {String} alterName - Name der umzubenennenden Gruppe
    * @param {String} neuerName - der neue Name der Gruppe
@@ -116,6 +116,6 @@ class Shopping {
   }
 }
 
-const App = new Shopping()
+const Modell = new Shopping()
 
-export default App
+export default Modell

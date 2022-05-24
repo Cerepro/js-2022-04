@@ -24,7 +24,7 @@
 <details>
 <summary>Aufgabe 1</summary>
 
-1. Öffne die Datei [ShoppingList.js](../src/ShoppingList.js) und gehe in der `render()`-Methode zu Zeile 13.
+1. Öffne die Datei [App.js](../src/App.js) und gehe in der `render()`-Methode zu Zeile 13.
 2. Kopiere Deinen HTML-Code aus [index.html](../index.html) hier hinein.
 3. Ersetze alle `class` im HTML-Code durch `className`. Schließe alle 'Single'-Tags mit `/>`. Also schreibe z.B. statt `<input>` -> `<input/>` und statt `<hr>` -> `<hr/>`.
 4. Öffne einen Terminal im Root-Verzeichnis dieses Projektes und installiere die App, indem Du folgenden Befehl ausführst: `npm install` 
@@ -49,8 +49,8 @@ Das Ergebnis sollte im Browser ungefähr so aussehen:
 <summary>Aufgabe 2</summary>
 
 1. Öffne die Datei [GruppenTag.js](../src/components/GruppenTag.js) und gehe in der `render()`-Methode zu Zeile 13.
-2. Verschiebe Deinen Gruppen-Code aus [ShoppingList.js](../src/ShoppingList.js) hierhin. Das ist der Code innerhalb des ersten `<dl>`-Tags.
-3. Ersetze in der [ShoppingList.js](../src/ShoppingList.js) den bisherigen Code zwischen den `<dl>`-Tags durch `<GruppenTag/>`.
+2. Verschiebe Deinen Gruppen-Code aus [App.js](../src/App.js) hierhin. Das ist der Code innerhalb des ersten `<dl>`-Tags.
+3. Ersetze in der [App.js](../src/App.js) den bisherigen Code zwischen den `<dl>`-Tags durch `<GruppenTag/>`.
 4. Falls die IDE den Import nicht automatisch ergänzt, füge ihn in Zeile 2 ein: `import GruppenTag from './components/GruppenTag'`
 </details>
 
