@@ -37,7 +37,9 @@ class App extends React.Component {
   }
 
   erledigtAufZuKlappen() {
-    this.setState({erledigtAufgeklappt: !this.state.erledigtAufgeklappt})
+    // ToDo: fertig programmieren
+    let neuerZustand = !this.state.erledigtAufgeklappt
+    this.setState({erledigtAufgeklappt: neuerZustand})
   }
 
   artikelChecken = (artikel) => {
@@ -46,11 +48,26 @@ class App extends React.Component {
     // 'aktion' abhängig von 'artikel.gekauft' auf "erledigt" oder "reaktiviert" setzen
     // App.informieren mit 'aktion'
     // 'state' aktualisieren
+    artikel.gekauft = !artikel.gekauft
+    let aktion
+    if (artikel.gekauft){
+      aktion = "erledigt"
+    } else {
+      aktion = "unerledigt"
+    }
+    Modell.informieren(`${artikel.name} ist ${aktion}`)
+    this.setState(this.state)
   }
 
   artikelHinzufuegen() {
     // ToDo: implementiere diese Methode
-    console.debug("Hello")
+    let eingabe = document.getElementById("artikelEingabe")
+    if(eingabe.value.trim().length > 0){
+      Modell.aktiveGruppe.artikelHinzufuegen(eingabe.value)
+      this.setState(this.state)
+    }
+    eingabe.value = ""
+    eingabe.focus()
   }
 
   setAktiveGruppe(gruppe) {
@@ -98,7 +115,6 @@ class App extends React.Component {
                    onKeyPress={e => (e.key == 'Enter') ? this.artikelHinzufuegen() : ''}/>
             <span className="mdc-line-ripple"></span>
             <i className="material-icons mdc-text-field__icon mdc-text-field__icon--trailing"
-               tabIndex="0" role="button"
                onClick={() => this.artikelHinzufuegen()}>add_circle</i>
           </label>
 
