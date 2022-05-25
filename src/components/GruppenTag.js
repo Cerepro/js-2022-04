@@ -6,6 +6,10 @@ class GruppenTag extends React.Component {
     super(props)
   }
 
+  artikelEntfernen(name) {
+    // ToDo: implementiere diese Methode
+  }
+
   render() {
     const gruppe = this.props.gruppe
 
@@ -20,14 +24,16 @@ class GruppenTag extends React.Component {
     }
 
     let artikelArray = []
-    for (const film of gruppe.artikelListe) {
-      if (film.gekauft == this.props.gekauft) {
-        artikelArray.push(<ArtikelTag artikel={film} key={film.id}/>)
+    for (const artikel of gruppe.artikelListe) {
+      if (artikel.gekauft == this.props.gekauft) {
+        artikelArray.push(
+          <ArtikelTag artikel={artikel} key={artikel.id}
+                      checkHandler={this.props.checkHandler}
+                      deleteHandler={() => this.artikelEntfernen(artikel.name)}/>)
       }
     }
     return (
       <React.Fragment>
-        {/* ToDo: füge hier drunter Deinen HTML-Code ein */}
         {gruppenHeader}
         {artikelArray}
       </React.Fragment>

@@ -41,13 +41,18 @@ class ArtikelTag extends React.Component {
     // erlaubt das abhaken und reaktivieren
     const viewTemplate = (
       <dd>
-        <label><input type="checkbox"/>{artikelName}</label>
+        <label>
+          <input type="checkbox" checked={artikel.gekauft}
+                 onChange={() => this.props.checkHandler(artikel)}/>
+          {artikelName}
+        </label>
         {!artikel.gekauft ?
           <i className="material-icons"
              onClick={() => this.setState({isEditing: true})}>edit</i>
           : ""
         }
-        <i className="material-icons">delete</i></dd>
+        <i className="material-icons"
+           onClick={this.props.deleteHandler}>delete</i></dd>
     )
 
     // erlaubt das Ändern des Namens
