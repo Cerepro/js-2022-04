@@ -11,6 +11,10 @@ class ArtikelTag extends React.Component {
     }
   }
 
+  /**
+   * Reagiert auf Änderungen im Eingabefeld und speichert den neuen Wert im newName-state
+   * @param {Event.CHANGE} event - das Change-Event im Eingabefeld
+   */
   handleChange(event) {
     this.setState({newName: event.target.value})
   }
@@ -34,6 +38,7 @@ class ArtikelTag extends React.Component {
       artikelName = <s>{artikel.name}</s>
     }
 
+    // erlaubt das abhaken und reaktivieren
     const viewTemplate = (
       <dd>
         <label><input type="checkbox"/>{artikelName}</label>
@@ -45,6 +50,7 @@ class ArtikelTag extends React.Component {
         <i className="material-icons">delete</i></dd>
     )
 
+    // erlaubt das Ändern des Namens
     let editTemplate = (
       <dd>
         <input type="search" value={this.state.newName} autoFocus={true}

@@ -49,7 +49,9 @@ class App extends React.Component {
   }
 
   setAktiveGruppe(gruppe) {
-    // ToDo:
+    Modell.aktiveGruppe = gruppe
+    Modell.informieren("[App] Gruppe \"" + gruppe.name + "\" ist nun aktiv")
+    this.setState({aktiveGruppe: Modell.aktiveGruppe})
   }
 
   render() {
@@ -60,6 +62,7 @@ class App extends React.Component {
           key={gruppe.id}
           gruppe={gruppe}
           gekauft={false}
+          aktiv={gruppe == this.state.aktiveGruppe}
           aktiveGruppeHandler={() => this.setAktiveGruppe(gruppe)}/>)
       }
     }
