@@ -24,14 +24,13 @@
 <details>
 <summary>Aufgabe 1 - Artikel erledigen / reaktivieren</summary>
 
-1. Öffne die Datei [App.js](../src/App.js) und vervollständige die `setAktiveGruppe(gruppe)`-Methode. Programmiere folgenden Code darin:
-   1. Setze im `App`-Objekt die `aktiveGruppe`  auf den übergebenen `gruppe`-Parameter.
-   2. Gib mit `App.informieren` folgende Meldung aus:  `[App] Gruppe \"" + gruppe.name + "\" ist nun aktiv`
-   3. Setze mit `this.setState()` die `aktiveGruppe` auf `App.aktiveGruppe`.
-2. Weiter unten wird diese Methode über den `aktiveGruppeHandler` an den `<GruppenTag/>` übergeben. Weiterhin steuert das Gruppen-prop `aktiv`  das Highlighten (Hervorheben) der aktiven Gruppe. 
-3. In [GruppenTag.js](../src/components/GruppenTag.js) wird der `aktiveGruppeHandler` im `<dt>`-Tag beim `onClick` aufgerufen. Außerdem wird seine CSS-Klasse über den `aktiv`-prop gesteuert.
-4. Starte die App mit folgendem Befehl: `npm start`
-5. Zeige die Seite im Browser an, indem Du diese URL aufrufst:  
+1. Öffne die Datei [App.js](../src/App.js) und vervollständige die `artikelChecken(artikel)`-Methode. Programmiere folgenden Code darin:
+   1. Die `gekauft`-Variable des übergebenen `artikel` soll sich beim Ausführen der Methode verändern(von `true` zu `false` oder andersrum).
+   2. Deklariere eine Variable `aktion`, welche abhängig von `artikel.gekauft` "erledigt" oder "reaktiviert" ergibt. Verwende dafür den "ternären Operator": `let variable = (bedingung) ? trueWert : falseWert`
+   3. Rufe `App.informieren()` auf und gib aus, ob der Artikel erledigt oder reaktiviert wurde.
+   4. Aktualisiere den `state` 
+2. Starte die App mit folgendem Befehl: `npm start`
+3. Teste die App im Browser8, indem Du diese URL aufrufst:  
 [http://localhost:3000](http://localhost:3000)
 
 **Ergebnis:** du solltest nun die Artikel in der Einkaufsliste durch anklicken von "Einkaufen" zu "Erledigt" verschieben
