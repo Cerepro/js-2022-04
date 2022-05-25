@@ -50,7 +50,6 @@ class App extends React.Component {
 
   artikelHinzufuegen() {
     // ToDo: implementiere diese Methode
-    console.debug("Hello")
   }
 
   setAktiveGruppe(gruppe) {
