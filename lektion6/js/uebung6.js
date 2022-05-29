@@ -9,14 +9,8 @@ function aufgabe1() {
   console.debug("Aufgabe 1 ==========================")
 
   //ToDo: füge ab hier Deinen Code ein
- function funktion1(name) {
-   console.debug(name)
- }
-funktion1("Diese funktion kenne ich bereits schon!")
-
-
+  console.debug("Diese Funktion kenne ich bereits!")
 }
-
 
 /**
  * 2) Benutze deinen ersten Parameter.
@@ -25,10 +19,11 @@ function aufgabe2() {
   console.debug("Aufgabe 2 ==========================")
 
   //ToDo: füge ab hier Deinen Code ein
-  function sagHallo (name){
-    console.debug("Hallo" + name)
+  function sagHallo(name) {
+    console.debug("Hallo " + name)
   }
-  sagHallo ("Patrick")
+
+  sagHallo("Jacky")
 }
 
 /**
@@ -42,8 +37,9 @@ function aufgabe3() {
   }
 
   //ToDo: füge ab hier Deinen Code ein
-  sagBye("Peter")
+  sagBye("Jacky")
 }
+
 /**
  * 4) Schreibe deine erste Funktion mit Parameter und Argument.
  */
@@ -51,12 +47,10 @@ function aufgabe4() {
   console.debug("Aufgabe 4 ==========================");
 
   //ToDo: füge ab hier Deinen Code ein
-    function  wilkommenZurück (name) {
-
-    console.debug("Da bist Du ja wieder" + name)
-
+  function willkommenZurueck(name) {
+    console.debug("Da bist du ja wieder",name)
   }
-  wilkommenZurück("Patrick")
+  willkommenZurueck("Jacky")
 }
 
 /**
@@ -67,7 +61,7 @@ function aufgabe5() {
 
   function multiplizieren(a, b) {
     //ToDo: füge ab hier Deinen Code ein
-    return (a+b)
+    return (a*b)
   }
 
   console.debug(multiplizieren(3, 5))
@@ -81,14 +75,17 @@ function aufgabe6() {
 
   //ToDo: füge ab hier Deinen Code ein
   function fakultaet(a) {
-  if (a==0){
-    return 1;
-  }
+
+    if (a <=1 ){
+      return 1
+    }
   else {
-   return fakultaet(a-1)*a
+    return  a*fakultaet(a-1)
+    }
   }
-}
-    console.debug(fakultaet(5))
+
+
+  console.debug(fakultaet(5))
 }
 
 /**

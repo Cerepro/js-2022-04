@@ -21,8 +21,8 @@
   //ToDo: Schreibe hier deine Funktion Hallo!
   function Hallo() {
     return <h1>Hallo React!</h1>
-  }
 
+  }
   const element = <Hallo />;
   ReactDOM.render(
     element,
@@ -37,12 +37,10 @@
 
   //ToDo: Schreibe hier deine Klasse Tag!
   class Tag extends React.Component{
-    render () {
-      return (<h1>Heute ist ein schöner Tag!</h1>)
+    render() {
+      return<h1>Heute ist ein schöner Tag!</h1>
+
     }
-  }
-  function Welcome(props) {
-    return <h1>Hallo {props.name}</h1>;
   }
 
   const element2 = <Tag />;
@@ -58,10 +56,10 @@
 <script type="text/babel">
 
   //ToDo: Schreibe hier deine Funktion mit props! Vergesse nicht, deinen Namen unten zu schreiben!
-  function Hey(props){
-    return <h2>Hey {props.name}</h2>
-  }
-  const element3 = <Hey name=", Patrick" />;
+function  Hey (probs) {
+  return <h1>Hey, {probs.name}</h1>
+}
+  const element3 = <Hey name=" Jacky " />;
   ReactDOM.render(
     element3,
     document.getElementById(`root3`)
@@ -74,16 +72,16 @@
 <script type="text/babel">
 
   //ToDo: Schreibe hier deine Funktion "Wiederholt"!
-  function Wiederholt(){
-    return <div>
-      <Hey name="Nicole"/>
-      <Hey name="Jasmin"/>
-      <Hey name="Hannes"/>
-    </div>
-  }
+function Wiederholt(probs){
+return Hey(probs)
+}
 
-  const element4 = < Wiederholt  />;
-  ReactDOM.render(
+const element4 = [<Wiederholt name="Angelina" />,
+  <Wiederholt name="Annabell"/>,
+    <Wiederholt name="Coco"/>,
+      <Wiederholt name="Sammy"/>,
+        <Wiederholt name="Daisy"/>]
+        ReactDOM.render(
     element4,
     document.getElementById('root4')
   );
@@ -95,15 +93,13 @@
 <script type="text/babel">
 
   //ToDo: Schreibe hier deine Klasse mit props! Vergesse nicht, deinen Namen unten zu schreiben!
-  class Vorname extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-    render (){
-      return (<h2>Du wirst langsam echt gut in React Patrick!</h2>)
-    }
+class Vorname extends React.Component{
+  render() {
+    return <div>Du wirst langsam echt gut in React, {this.props.name}</div>
   }
-  const element5 = <Vorname name="//ToDO: Schreibe hier deinen Namen" />;
+
+}
+  const element5 = <Vorname name="Jacky" />;
   ReactDOM.render(
     element5,
     document.getElementById(`root5`)
@@ -128,14 +124,14 @@
       <Item gegenstand="Kuchen" preis="4,99" />
     </div>
   }
+
   //ToDo: Schreibe hier deine ReactDOM render Funktion!
-  const element6 = <App />;
+  const element6 = <App/>
   ReactDOM.render(
-    element6,
-    document.getElementById(`root6`)
+          element6,
+          document.getElementById(`root6`),
+
   );
-
-
 </script>
 
 </body>

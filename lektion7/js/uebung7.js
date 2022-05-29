@@ -1,6 +1,6 @@
 /**
-* Uebung 7: Klassen
-*/
+ * Uebung 7: Klassen
+ */
 
 /**
  * 1) Kreiere einen neuen Apfel
@@ -16,7 +16,7 @@ function aufgabe1() {
   }
 
   //ToDo: füge ab hier deinen Code ein
-  let apfel = new Apfel("rot")
+let apfel = new Apfel("rot")
   console.debug(apfel.farbe)
 }
 
@@ -32,15 +32,14 @@ function aufgabe2() {
     }
 
     //ToDo: füge ab hier deinen Code ein
-    hupen (honk){
-      console.debug(honk)
+    hupen() {
+      console.debug("honk honk")
     }
   }
 
   let bmw = new Auto("rot")
 
-  bmw.hupen("honk")
-  bmw.hupen("möp")
+  bmw.hupen()
 }
 
 /**
@@ -50,7 +49,7 @@ function aufgabe3() {
   console.debug("Aufgabe 3 ==========================");
 
   class Pkw {
-    constructor(farbe) {
+    constructor (farbe) {
       this.farbe = farbe
     }
 
@@ -64,7 +63,6 @@ function aufgabe3() {
   //ToDo: füge ab hier deinen Code ein
   console.debug(mini.farbe)
   mini.hupen()
-
 }
 
 /**
@@ -76,9 +74,8 @@ function aufgabe4() {
   class Motorrad {
     //ToDo: füge ab hier deinen Code ein
     constructor(baujahr) {
-      this.baujahr=baujahr
+      this.baujahr = baujahr
     }
-
     hupen() {
       console.debug("honk honk")
     }
@@ -96,15 +93,16 @@ function aufgabe5() {
   console.debug("Aufgabe 5 ==========================");
 
   //ToDo: füge ab hier deinen Code ein
-  class Elektroauto {
-    constructor(farbe) {
-      this.farbe=farbe
-    }
-    hupen(){
-      console.debug("honk honk")
-    }
+class Elektroauto {
+  constructor(farbe) {
+    this.farbe = farbe
   }
-  let tesla = new Elektroauto("grau")
+  hupen(){
+    console.debug("honk honk")
+  }
+}
+
+let tesla = new Elektroauto("grau")
   console.debug(tesla.farbe)
   tesla.hupen()
 }
@@ -119,3 +117,4 @@ function main() {
   aufgabe4()
   aufgabe5()
 }
+main()

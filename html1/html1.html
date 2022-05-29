@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Einkaufslisten-App</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <meta charset="UTF-8">
+    <title>Einkaufsliste</title>
+
 </head>
+
+
 <body>
-<head>
-  <title></title>
 
-  <h1>Einkaufsliste</h1>
-  <nav>
-    <p>Artikel hinzufügen +</p>
-  </nav>
-  <hr>
-</head>
+
+<header>
+
+    <h1>Einkaufsliste</h1>
+
+
+    <nav>
+        <input type="search" placeholder="Artikel hinzufügen ">
+        <button class="material-icons"
+                style="vertical-align: bottom">add_circle</button>
+
+    </nav>
+
+    <hr/>
+</header>
 <main>
-  <section>
-    <h2>Einkaufen</h2>
 
-    <p>Brokkoli <br/> Reis <br/> Streukäse <br/></p>
-  </section>
-  <hr>
-  <section>
-    <h2>Erledigt</h2>
+    <section>
+        <h2>Einkaufen<i class="material-icons">expand_less</i></h2>
+        Obst & Gemüse<i class="material-icons">expand_less</i><br/>
 
-    <p>Tofu<br/></p>
-  </section>
-  <hr>
+        <dd><input type="checkbox"/> Brokkoli </dd>
+        Getreideprodukte<i class="material-icons">expand_less</i><br/>
+        <dd><input type="checkbox"/> Reis </dd>
+        Milchprodukte<i class="material-icons">expand_less</i><br/>
+        <dd><input type="checkbox"/>Streukäse<br/></dd>
+    </section>
+    <hr>
+
+    <section>
+        <h2>Erledigt<i class="material-icons">expand_less</i></h2>
+        Hülsenfrüchte<i class="material-icons">expand_less</i><br/>
+        <dd><input type="checkbox"/><s>Tofu</s></dd>
+        <hr>
+    </section>
+
 </main>
-<footer>
-  <nav>
-    <div>Gruppen</div>
-    <div>Sortieren</div>
-    <div>Einstellungen</div>
-  </nav>
-</footer>
+
+<nav>
+    <footer>
+        <div>
+            <button>
+                <span class="material-icons">bookmark_add</span>Gruppen</button>
+            <button>
+                <span class="material-icons">sort</span>Sortieren</button>
+            <button>
+                <span class="material-icons">settings</span>Einstellungen</button>
+
+        </div>
+    </footer>
+</nav>
+
 </body>
 </html>

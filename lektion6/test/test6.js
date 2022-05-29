@@ -95,8 +95,3 @@ function main() {
     teste_gruppeEntfernen()
 }
 main()
-
-
-
-
-

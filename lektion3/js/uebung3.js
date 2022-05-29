@@ -9,8 +9,13 @@ function aufgabe1() {
   console.debug("Aufgabe 1 ==========================");
 
   //ToDo: füge ab hier Deinen Code ein
-
-  console.debug(pizza)
+const pizza = {
+  art: "Tunfisch",
+  belag: ["Tunfisch", "Zwiebeln", "Käse"],
+  skala: 8,
+  gerneIsst: true,
+}
+console.debug(pizza)
 }
 
 /**
@@ -19,16 +24,16 @@ function aufgabe1() {
 function aufgabe2() {
   console.debug("Aufgabe 2 ==========================");
 
-  let ghibli = {
-    name: "Studio Ghibli",
-    gruendung: 1985,
-    medium: "Anime"
+  const tonno = {
+    name: "Pizza Tonno",
+    gruendung: 1981,
+    medium: "immerimfroster"
   }
 
   //ToDo: füge ab hier in den debugs Deinen Code ein
-  console.debug()
-  console.debug()
-  console.debug()
+  console.debug(Object.keys(tonno))
+  console.debug(Object.values(tonno))
+  console.debug(Object.entries(tonno))
 }
 
 /**
@@ -38,7 +43,14 @@ function aufgabe3() {
   console.debug("Aufgabe 3 ==========================");
 
   //ToDo: füge ab hier Deinen Code ein
-
+const kuenstler = {
+  vorname: "Ryan Rodney",
+  nachname: "Reynolds",
+  geboren: "23.Oktober 1976",
+  gestorben: "-",
+  taetigkeit: "Schauspieler und Filmproduzent"
+}
+console.debug(Object.keys(kuenstler))
   for (let key of Object.keys(kuenstler)) {
     console.debug(key + ": " + kuenstler[key])
   }
