@@ -23,3 +23,4 @@ class PartyLock extends React.Component{
 }
 
 export default PartyLock
+//
