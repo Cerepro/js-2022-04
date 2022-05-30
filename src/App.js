@@ -1,5 +1,6 @@
 import React from 'react'
 import GruppenTag from './components/GruppenTag'
+import GruppenDialog from './components/GruppenDialog'
 import Modell from './model/Shopping'
 
 
@@ -79,7 +80,6 @@ class App extends React.Component {
       }
     }
 
-
     let schonGekauft = []
     if (this.state.erledigtAufgeklappt) {
       for (const gruppe of Modell.gruppenListe) {
@@ -90,6 +90,13 @@ class App extends React.Component {
           aktiveGruppeHandler={() => this.setAktiveGruppe(gruppe)}
           checkHandler={this.artikelChecken}/>)
       }
+    }
+
+    let gruppenDialog = ""
+    if (this.state.showGruppenDialog) {
+      gruppenDialog = <GruppenDialog
+        gruppenListe={Modell.gruppenListe}
+        onDialogClose={() => this.setState({showGruppenDialog: false})}/>
     }
 
     return (
@@ -137,7 +144,8 @@ class App extends React.Component {
         <hr/>
 
         <footer>
-          <button className="mdc-button mdc-button--raised">
+          <button className="mdc-button mdc-button--raised"
+                  onClick={() => this.setState({showGruppenDialog: true})}>
             <span className="material-icons">bookmark_add</span>
             <span className="mdc-button__ripple"></span> Gruppen
           </button>
@@ -150,6 +158,8 @@ class App extends React.Component {
             <span className="mdc-button__ripple"></span> Setup
           </button>
         </footer>
+
+        {gruppenDialog}
       </div>
     )
   }
