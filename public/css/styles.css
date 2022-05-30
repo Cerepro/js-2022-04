@@ -1,10 +1,10 @@
 #root {
     width: 23rem;
-    background-image: url("../img/Einkaufsliste.png");
+    background-image: url("../img/Mash.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-    background-size: 1000px;
+    background-size: 100px;
 }
 #container {
     opacity: 85%;
