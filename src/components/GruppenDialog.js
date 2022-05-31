@@ -1,5 +1,6 @@
 import React from 'react'
 import Modell from '../model/Shopping'
+import GruppeBearbeitenTag from "./GruppeBearbeitenTag";
 
 class GruppenDialog extends React.Component {
   constructor(props) {
@@ -21,12 +22,10 @@ class GruppenDialog extends React.Component {
     const gruppenListe = []
     for (let gruppe of this.state.gruppenListe) {
       gruppenListe.push(
-        <dt className="inaktiv" key={gruppe.id}>
-          <span>{gruppe.name}</span>
-          <i className="material-icons">drive_file_rename_outline</i>
-          <i className="material-icons"
-             onClick={() => this.gruppeEntfernen(gruppe.name)}>delete</i>
-        </dt>
+        <GruppeBearbeitenTag
+          key={gruppe.id}
+          gruppe={gruppe}
+          entfernenHandler={() => this.gruppeEntfernen(gruppe.name)}/>
       )
     }
 
