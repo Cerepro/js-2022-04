@@ -109,10 +109,12 @@ export function Mailbox(props) {
       <div>
 
         <h1>Willkommen zu deiner Mailbox!</h1>
-        {//ToDo: Hier die Bedingung und den Operator einfügen
+        {
+          //ToDo: Hier die Bedingung und den Operator einfügen
             <h2>
               Du hast {ungeleseneNachrichten.length} ungelesene Nachrichten.
             </h2>
+
         }
       </div>
   );
@@ -135,10 +137,19 @@ export class NutzerGruessung extends React.Component {
   }
 
   //ToDo: Schreibe hier deinen Code statt des Rückgabewerts null!
-    render(){
-      return null
+    render() {
+      //let antwort = ""
+      //if (this.state.isLoggedIn) {
+       // antwort = "Willkommen zurück"
+      // } else {
+      // antwort = "Bitte regestrieren Sie sich"
+      // }
+      // return antwort
+
+      return (this.state.isLoggedIn)? "Willkommen zurück": "Bitte regestrieren sie sich"
     }
 }
+
 
 
 

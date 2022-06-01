@@ -4,7 +4,7 @@ function App() {
   return (
    <div>
      <h2>Aufgabe 1</h2>
-     <Gruesse isLoggedIn={false} />
+     <Gruesse isLoggedIn={true} />
 
      <h2>Aufgabe 2</h2>
 
@@ -13,7 +13,7 @@ function App() {
 
      <Mailbox ungeleseneNachrichten={messages} />
      <h2 >Aufgabe 4 </h2>
-     //ToDo: Schreibe hier deinen Code!
+      <NutzerGruessung/>
 
     </div>
   );
