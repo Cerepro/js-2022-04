@@ -24,12 +24,12 @@
 <details>
 <summary>Aufgabe 1 - Artikel erledigen / reaktivieren</summary>
 
-1. Öffne die Datei [App.js](../src/App.js) und vervollständige die `setAktiveGruppe(gruppe)`-Methode. Programmiere folgenden Code darin:
+1. Öffne die Datei [App.js](../react5/src/src/App.js) und vervollständige die `setAktiveGruppe(gruppe)`-Methode. Programmiere folgenden Code darin:
    1. Setze im `App`-Objekt die `aktiveGruppe`  auf den übergebenen `gruppe`-Parameter.
    2. Gib mit `App.informieren` folgende Meldung aus:  `[App] Gruppe \"" + gruppe.name + "\" ist nun aktiv`
    3. Setze mit `this.setState()` die `aktiveGruppe` auf `App.aktiveGruppe`.
 2. Weiter unten wird diese Methode über den `aktiveGruppeHandler` an den `<GruppenTag/>` übergeben. Weiterhin steuert das Gruppen-prop `aktiv`  das Highlighten (Hervorheben) der aktiven Gruppe. 
-3. In [GruppenTag.js](../src/components/GruppenTag.js) wird der `aktiveGruppeHandler` im `<dt>`-Tag beim `onClick` aufgerufen. Außerdem wird seine CSS-Klasse über den `aktiv`-prop gesteuert.
+3. In [GruppenTag.js](../react5/src/src/components/GruppenTag.js) wird der `aktiveGruppeHandler` im `<dt>`-Tag beim `onClick` aufgerufen. Außerdem wird seine CSS-Klasse über den `aktiv`-prop gesteuert.
 4. Starte die App mit folgendem Befehl: `npm start`
 5. Zeige die Seite im Browser an, indem Du diese URL aufrufst:  
 [http://localhost:3000](http://localhost:3000)
@@ -51,7 +51,7 @@ Das Ergebnis sollte im Browser ungefähr so aussehen:
 <details>
 <summary>Aufgabe 2 - Artikel hinzufügen</summary>
 
-1. Öffne die Datei [App.js](../src/App.js) und vervollständige die`artikelHinzufuegen()`-Methode. Programmiere folgenden Code darin:
+1. Öffne die Datei [App.js](../react5/src/src/App.js) und vervollständige die`artikelHinzufuegen()`-Methode. Programmiere folgenden Code darin:
 2. Deklariere eine Variable namens `eingabe` und weise ihr das Ergebnis von `document.getElementById("artikelEingabe")` zu.
 3. In `eingabe.value` steht, was der User eingegeben hat. Wenn die User-Eingabe mehrere Buchstaben enthält (also die `length` größer als 0 ist), dann:
    1. Füge mittels `Modell.aktiveGruppe.artikelHinzufuegen()` einen Artikel hinzu. Der Name des neuen Artikels ergibt sich aus `eingabe.value`.
@@ -77,7 +77,7 @@ Das Ergebnis sollte im Browser ungefähr so aussehen:
 <details>
 <summary>Aufgabe 3 - Artikel entfernen</summary>
 
-1. Öffne die Datei [GruppenTag.js](../src/components/GruppenTag.js) und vervollständige die`artikelEntfernen()`-Methode. Programmiere folgenden Code darin:
+1. Öffne die Datei [GruppenTag.js](../react5/src/src/components/GruppenTag.js) und vervollständige die`artikelEntfernen()`-Methode. Programmiere folgenden Code darin:
 2. Die aktuelle Gruppe wird mittels 'gruppe-prop' übergeben. Du kannst über `this.props.gruppe` auf alle ihre Methoden zugreifen, u.a. `artikelEntfernen()`. Rufe deshalb `this.props.gruppe.artikelEntfernen()` auf und übergib den `name`-Parameter.
 3. Nach dem Löschen des Artikels soll diese Gruppe aktiviert werden, damit der User weitere Artikel darin eingeben kann. Aktiviere sie, indem Du den `aktiveGruppeHandler`, aufrufst, der als `prop` übergeben wurde. Verwende dabei die aktuelle Gruppe als Argument.
 

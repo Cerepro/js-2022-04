@@ -69,10 +69,16 @@ function Gruesse2(props) {
 
   const isLoggedIn = props.isLoggedIn;
   //ToDo: Schreibe hier deinen Code!
+  if (isLoggedIn){
+
+    return <NutzerGruss2/>
+   }
+
+  else {
+  return <GastGruss2/>
+  }
 
 }
-
-
 
 
 

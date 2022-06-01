@@ -50,7 +50,6 @@ class App extends React.Component {
   }
 
   artikelHinzufuegen() {
-    // ToDo: implementiere diese Methode
     const eingabe = document.getElementById("artikelEingabe")
     const artikelName = eingabe.value.trim()
     if (artikelName.length > 0) {

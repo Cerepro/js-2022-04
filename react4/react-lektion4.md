@@ -24,7 +24,7 @@
 <details>
 <summary>Aufgabe 1 - Gruppe umbenennen</summary>
 
-1. Öffne die Datei [GruppeBearbeitenTag.js](../src/components/GruppeBearbeitenTag.js) und vervollständige die `handleChange()`-Methode. Programmiere folgenden Code darin:
+1. Öffne die Datei [GruppeBearbeitenTag.js](../react5/src/src/components/GruppeBearbeitenTag.js) und vervollständige die `handleChange()`-Methode. Programmiere folgenden Code darin:
    1. Deklariere eine Variable `gruppenName` und weise ihr den Wert von `event.target.value` zu.
    2. Aktualisiere den `state.newName` mit `gruppenName`.
 2. Vervollständige in der gleichen Klasse die `gruppeUmbenennen()`-Methode. Programmiere folgenden Code darin:
@@ -50,7 +50,7 @@ Das Ergebnis sollte im Browser ungefähr so aussehen:
 <details>
 <summary>Aufgabe 2 - Gruppe hinzufügen</summary>
 
-1. Öffne die Datei [GruppenDialog.js](../src/components/GruppenDialog.js) und vervollständige die`gruppeHinzufuegen()`-Methode. Programmiere folgenden Code darin:
+1. Öffne die Datei [GruppenDialog.js](../react5/src/src/components/GruppenDialog.js) und vervollständige die`gruppeHinzufuegen()`-Methode. Programmiere folgenden Code darin:
 2. Deklariere eine Variable namens `eingabe` und weise ihr das Ergebnis von `document.getElementById("eingabe")` zu. In `eingabe.value` steht, was der User eingegeben hat. 
 3. Deklariere eine Variable namens `gruppenName` und weise ihr den Wert von `eingabe.value.trim()` zu. 
 4. Wenn die User-Eingabe mehrere Buchstaben enthält (also die `gruppenName.length` größer als 0 ist), dann:
@@ -76,7 +76,7 @@ Das Ergebnis sollte im Browser ungefähr so aussehen:
 <details>
 <summary>Aufgabe 3 - Gruppe entfernen</summary>
 
-1. Öffne die Datei [GruppenDialog.js](../src/components/GruppenDialog.js) und vervollständige die`gruppeEntfernen()`-Methode. Programmiere folgenden Code darin:
+1. Öffne die Datei [GruppenDialog.js](../react5/src/src/components/GruppenDialog.js) und vervollständige die`gruppeEntfernen()`-Methode. Programmiere folgenden Code darin:
 2. Rufe `Modell.gruppeEntfernen()` auf und übergib den `name`-Parameter.
 3. Aktualisiere die `state.gruppenListe`, um die geänderte Gruppen-Liste sichtbar zu machen.
 
