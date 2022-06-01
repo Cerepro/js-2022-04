@@ -11,11 +11,11 @@ Hinweise zur Bearbeitung:
 ## Lektion 5a - Übungsaufgaben
 
 1. Zum Einstieg schaue dir einmal den Code im Components Ordner in der Uebung5a.js zu Aufgabe 1 an. Vertausche an der geforderten Stelle in der App.js
-   `false` und `true` und beobachte, wie sich die Ausgabe verändert, nachdem du in diesem Verzeichnis mit `cd uebung5a` die App mit `npm start` gestartet hast. Gute Neuigkeiten: Wenn du verstanden hast,
+   `false` und `true` und beobachte, wie sich die Ausgabe verändert, nachdem du in diesem Verzeichnis mit `cd react5` die App mit `npm install`installiert und mit `npm start` gestartet hast. Gute Neuigkeiten: Wenn du verstanden hast,
    warum sich die Ausgabe ändert, dann hast du bereits das Grundprinzip der gesamten Lektion verstanden!
 
 >![Lektion 5a - Aufgabe 1 - false](img/Aufgabe1true.png)
->![Lektion 5a - Aufgabe 1 - true](img/Aufgabe2false.png)
+>![Lektion 5a - Aufgabe 1 - true](img/Aufgabe1false.png)
 ---
 
 2. Weiterführend benutzen wir nun if und else, um nicht manuell im Code zwischen true und false wechseln zu müssen.
