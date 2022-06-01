@@ -1,7 +1,8 @@
 import React from 'react'
+import Modell from './model/Shopping'
 import GruppenTag from './components/GruppenTag'
 import GruppenDialog from './components/GruppenDialog'
-import Modell from './model/Shopping'
+import SortierDialog from "./components/SortierDialog";
 
 
 class App extends React.Component {
@@ -20,16 +21,16 @@ class App extends React.Component {
   initialisieren() {
     let fantasy = Modell.gruppeHinzufuegen("Fantasy")
     let film1 = fantasy.artikelHinzufuegen("Der Dunkle Kristall")
-    film1.gekauft = true
     fantasy.artikelHinzufuegen("Die Barbaren")
+    fantasy.artikelHinzufuegen("Der Herr der Ringe")
     let scifi = Modell.gruppeHinzufuegen("Science Fiction")
     let film2 = scifi.artikelHinzufuegen("Alita - Battle Angel")
-    film2.gekauft = true
     scifi.artikelHinzufuegen("Mad Max - Fury Road")
+    scifi.artikelHinzufuegen("Avatar")
     let dokus = Modell.gruppeHinzufuegen("Dokumentationen")
-    let film3 = dokus.artikelHinzufuegen("Endgame - Blaupause für die Globale Versklavung")
-    film3.gekauft = true
     dokus.artikelHinzufuegen("Die Kabale")
+    dokus.artikelHinzufuegen("Endgame - Blaupause für die Globale Versklavung")
+    dokus.artikelHinzufuegen("Die Wüste lebt")
   }
 
   einkaufenAufZuKlappen() {
@@ -66,6 +67,13 @@ class App extends React.Component {
     this.setState({aktiveGruppe: Modell.aktiveGruppe})
   }
 
+  closeSortierDialog = (reihenfolge, sortieren) => {
+    if (sortieren) {
+      Modell.sortieren(reihenfolge)
+    }
+    this.setState({showSortierDialog: false})
+  }
+
   render() {
     let nochZuKaufen = []
     if (this.state.einkaufenAufgeklappt == true) {
@@ -97,6 +105,11 @@ class App extends React.Component {
       gruppenDialog = <GruppenDialog
         gruppenListe={Modell.gruppenListe}
         onDialogClose={() => this.setState({showGruppenDialog: false})}/>
+    }
+
+    let sortierDialog = ""
+    if (this.state.showSortierDialog) {
+      sortierDialog = <SortierDialog onDialogClose={this.closeSortierDialog}/>
     }
 
     return (
@@ -149,7 +162,8 @@ class App extends React.Component {
             <span className="material-icons">bookmark_add</span>
             <span className="mdc-button__ripple"></span> Gruppen
           </button>
-          <button className="mdc-button mdc-button--raised">
+          <button className="mdc-button mdc-button--raised"
+                  onClick={() => this.setState({showSortierDialog: true})}>
             <span className="material-icons">sort</span>
             <span className="mdc-button__ripple"></span> Sort
           </button>
@@ -160,6 +174,7 @@ class App extends React.Component {
         </footer>
 
         {gruppenDialog}
+        {sortierDialog}
       </div>
     )
   }

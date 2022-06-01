@@ -11,6 +11,12 @@ class Shopping {
   gruppenListe = []
   aktiveGruppe = null
   meldungenAusgeben = true
+  SORTIERUNGEN = {
+    "Eigene Reihenfolge": this.sortiereIndex,
+    "Aufsteigend": this.sortiereAufsteigend,
+    "Absteigend": this.sortiereAbsteigend
+  }
+  sortierung = Object.keys(this.SORTIERUNGEN)[0]
 
   /**
    * Sucht eine Gruppe nach ihrem Namen und liefert sie als Objekt zurück
@@ -105,6 +111,58 @@ class Shopping {
       }
     }
   }
+
+  /**
+   * Sortiert Gruppen und Artikel nach der übergebenen `reihenfolge`
+   * @param {String} reihenfolge - entspricht einem der Keys aus {@link SORTIERUNGEN}
+   */
+  sortieren(reihenfolge) {
+    this.sortierung = reihenfolge
+    const sortierFunktion = this.SORTIERUNGEN[reihenfolge]
+    // sortiere zuerst die Gruppen
+    this.gruppenListe.sort(sortierFunktion)
+
+    // sortiere danach die Artikel jeder Gruppe
+    for(let gruppe of this.gruppenListe) {
+      gruppe.artikelListe.sort(sortierFunktion)
+    }
+    this.informieren("[App] nach \"" + reihenfolge + "\" sortiert")
+  }
+
+  /**
+   * Sortiert Elemente alphabetisch aufsteigend nach dem Namen
+   * @param {Gruppe|Artikel} a - erstes Element
+   * @param {Gruppe|Artikel} b - zweites Element
+   * @returns {Number} - wenn kleiner: -1, wenn gleich: 0, wenn größer: +1
+   */
+  sortiereAufsteigend(a, b) {
+    const nameA = a.name.toLowerCase()
+    const nameB = b.name.toLowerCase()
+    return nameA < nameB ? -1 : (nameA > nameB ? 1 : 0)
+  }
+
+  /**
+   * Sortiert Elemente alphabetisch absteigend nach dem Namen
+   * @param {Gruppe|Artikel} a - erstes Element
+   * @param {Gruppe|Artikel} b - zweites Element
+   * @returns {Number} - wenn kleiner: -1, wenn gleich: 0, wenn größer: +1
+   */
+  sortiereAbsteigend(a, b) {
+    const nameA = a.name.toLowerCase()
+    const nameB = b.name.toLowerCase()
+    return nameA < nameB ? 1 : (nameA > nameB ? -1 : 0)
+  }
+
+  /**
+   * Sortiert Elemente aufsteigend nach dem ursprünglichen Index
+   * @param {Gruppe|Artikel} a - erstes Element
+   * @param {Gruppe|Artikel} b - zweites Element
+   * @returns {Number} - wenn kleiner: -1, wenn gleich: 0, wenn größer: +1
+   */
+  sortiereIndex(a, b) {
+    return a.index < b.index ? -1 : (a.index > b.index ? 1 : 0)
+  }
+
 }
 
 const Modell = new Shopping()
