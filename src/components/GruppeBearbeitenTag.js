@@ -1,4 +1,5 @@
 import React from 'react'
+import Modell from '../model/Shopping'
 
 class GruppeBearbeitenTag extends React.Component {
   constructor(props) {
@@ -10,22 +11,13 @@ class GruppeBearbeitenTag extends React.Component {
   }
 
   handleChange(event) {
-    // ToDo: implementieren
     let gruppenName = event.target.value
-    this.setState({newName: gruppenName} )
-
+    this.setState({newName: gruppenName})
   }
-
-  /**
-   * Benennt eine Gruppe um
-   * @param {Gruppe} gruppe - die umzubenennende Gruppe
-   * @param {Event.KEYPRESS} event -
-   */
 
   gruppeUmbenennen(gruppe, event) {
     if (event && event.key != "Enter") return
-    // ToDo: implementieren
-    gruppe.name = this.state.newName
+    Modell.gruppeUmbenennen(gruppe.name, this.state.newName)
     this.setState({isEditing: false})
   }
 
