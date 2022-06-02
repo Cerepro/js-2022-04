@@ -11,15 +11,15 @@ Hinweise zur Bearbeitung:
 ## Lektion 5a - Übungsaufgaben
 
 1. Zum Einstieg schaue dir einmal den Code im Components Ordner in der Uebung5a.js zu Aufgabe 1 an. Vertausche an der geforderten Stelle in der App.js
-   `false` und `true` und beobachte, wie sich die Ausgabe verändert, nachdem du in diesem Verzeichnis mit `cd uebung5a` die App mit `npm start` gestartet hast. Gute Neuigkeiten: Wenn du verstanden hast,
+   `false` und `true` und beobachte, wie sich die Ausgabe verändert, nachdem du in diesem Verzeichnis mit `cd react5` die App mit `npm install`installiert und mit `npm start` gestartet hast. Gute Neuigkeiten: Wenn du verstanden hast,
    warum sich die Ausgabe ändert, dann hast du bereits das Grundprinzip der gesamten Lektion verstanden!
 
 >![Lektion 5a - Aufgabe 1 - false](img/Aufgabe1true.png)
->![Lektion 5a - Aufgabe 1 - true](img/Aufgabe2false.png)
+>![Lektion 5a - Aufgabe 1 - true](img/Aufgabe1false.png)
 ---
 
 2. Weiterführend benutzen wir nun if und else, um nicht manuell im Code zwischen true und false wechseln zu müssen.
-   Dazu programmiere innerhalb der sich im Components- Ordner befindenen Uebung5a.js `Funktion Gruesse2` eine `if-else Abfrage`, welche entweder die `Funktion NutzerGruss2`
+   Dazu programmiere innerhalb der sich im Components-Ordner befindenden Uebung5a.js `Funktion Gruesse2` eine `if-else Abfrage`, welche entweder die `Funktion NutzerGruss2`
    oder `GastGruss2` zurückgeben soll. Zuletzt solltest du dann in Chrome einen Button haben, welcher dich einloggt und wieder
    ausloggt. 
 
@@ -38,8 +38,8 @@ ___
 >![Lektion 5a - Aufgabe 3 - 3 Nachrichten](img/Aufgabe3.png)
 ---
 
-4. Zu guter Letzt benutzten wir nun noch einmal den sogenannten ternären Operator (`Aussage ? Option 1 : Option 2`). Benutze
-   diesen in der noch fehlenden `render Funktion` in der Uebung5a.js. Wenn der aktuelle `state von isLoggedIn` wahr ist, soll `Willkommen zurück!` ausgegeben
+4. Zu guter Letzt benuzten wir nun noch einmal den sogenannten ternären Operator (`Aussage ? Option 1 : Option 2`). Benutze
+   diesen in der noch fehlenden `render Funktion` in der Uebung5a.js. Wenn der aktuelle `state von isLoggedIn` wahr ist, soll `Willkommen zurück!`   ausgegeben
    werden. Andernfalls soll `Bitte registrieren Sie sich.` ausgegeben werden.  
    Um zu schauen, ob dein Code richtig ist, vertausche wie in der ersten Aufgabe true und false.
    Füge `NutzerGruessung` deiner App.js unter der Aufgabe 4 hinzu, sowie in den Aufgaben zuvor, um dein Ergebnis im Browser zu sehen. Importiert ist es schon :) 
