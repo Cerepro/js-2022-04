@@ -17,6 +17,7 @@ class Shopping {
     "Absteigend": this.sortiereAbsteigend
   }
   sortierung = Object.keys(this.SORTIERUNGEN)[0]
+  STORAGE_KEY = "einkaufslisteDaten"
 
   /**
    * Sucht eine Gruppe nach ihrem Namen und liefert sie als Objekt zurück
@@ -107,7 +108,7 @@ class Shopping {
         console.log(nachricht)
       } else {
         console.debug(nachricht)
-        // Todo: Speichern
+        this.speichern()
       }
     }
   }
@@ -123,7 +124,7 @@ class Shopping {
     this.gruppenListe.sort(sortierFunktion)
 
     // sortiere danach die Artikel jeder Gruppe
-    for(let gruppe of this.gruppenListe) {
+    for (let gruppe of this.gruppenListe) {
       gruppe.artikelListe.sort(sortierFunktion)
     }
     this.informieren("[App] nach \"" + reihenfolge + "\" sortiert")
@@ -163,6 +164,44 @@ class Shopping {
     return a.index < b.index ? -1 : (a.index > b.index ? 1 : 0)
   }
 
+  /**
+   * Speichert den Modell-Zustand im LocalStorage
+   * @param {Object} daten - entspricht dem Auf-Zuklapp-Zustand der App
+   */
+  speichern(daten) {
+    const json = {
+      gruppenListe: this.gruppenListe,
+      aktiveGruppeName: this.aktiveGruppe.name,
+    }
+    // Object.assign(json, daten)
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(json))
+  }
+
+  /**
+   * Lädt den Modell-Zustand aus dem LocalStorage
+   * @return {Boolean} erfolg - meldet, ob die Daten erfolgreich aus dem LocalStorage geladen wurden
+   */
+  laden() {
+    const daten = localStorage.getItem(this.STORAGE_KEY)
+    if (!daten) return false
+    this.initialisieren(JSON.parse(daten))
+    return true
+  }
+
+  /**
+   * Initialisiert das Modell aus dem LocalStorage
+   * @param {Object} jsonDaten - die übergebenen JSON-Daten
+   */
+  initialisieren(jsonDaten, ) {
+    this.gruppenListe = []
+    for(let gruppe of jsonDaten.gruppenListe) {
+      let neueGruppe = this.gruppeHinzufuegen(gruppe.name)
+      for (let artikel of gruppe.artikelListe) {
+        neueGruppe.artikelObjektHinzufuegen(artikel)
+      }
+    }
+    this.aktiveGruppe = this.gruppeFinden(jsonDaten.aktiveGruppeName)
+  }
 }
 
 const Modell = new Shopping()

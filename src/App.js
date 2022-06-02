@@ -8,7 +8,6 @@ import SortierDialog from "./components/SortierDialog";
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.initialisieren()
     this.state = {
       aktiveGruppe: null,
       showGruppenDialog: false,
@@ -16,6 +15,13 @@ class App extends React.Component {
       einkaufenAufgeklappt: true,
       erledigtAufgeklappt: false
     }
+  }
+
+  componentDidMount() {
+    if (!Modell.laden()) {
+      this.initialisieren()
+    }
+    this.setState(this.state)
   }
 
   initialisieren() {
@@ -35,11 +41,14 @@ class App extends React.Component {
 
   einkaufenAufZuKlappen() {
     let neuerZustand = !this.state.einkaufenAufgeklappt
-    this.setState({einkaufenAufgeklappt: neuerZustand})
+    const aufklappZustand = {einkaufenAufgeklappt: neuerZustand}
+    this.setState(aufklappZustand)
   }
 
   erledigtAufZuKlappen() {
-    this.setState({erledigtAufgeklappt: !this.state.erledigtAufgeklappt})
+    let neuerZustand = !this.state.erledigtAufgeklappt
+    const aufklappZustand = {erledigtAufgeklappt: neuerZustand}
+    this.setState(aufklappZustand)
   }
 
   artikelChecken = (artikel) => {
@@ -50,7 +59,6 @@ class App extends React.Component {
   }
 
   artikelHinzufuegen() {
-    // ToDo: implementiere diese Methode
     const eingabe = document.getElementById("artikelEingabe")
     const artikelName = eingabe.value.trim()
     if (artikelName.length > 0) {
