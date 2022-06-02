@@ -1,7 +1,8 @@
 import React from 'react'
+import Modell from './model/Shopping'
 import GruppenTag from './components/GruppenTag'
 import GruppenDialog from './components/GruppenDialog'
-import Modell from './model/Shopping'
+import SortierDialog from "./components/SortierDialog";
 
 
 class App extends React.Component {
@@ -16,6 +17,14 @@ class App extends React.Component {
       erledigtAufgeklappt: false
     }
   }
+
+  componentDidMount() {
+    if (!Modell.laden()) {
+      this.initialisieren()
+    }
+    this.setState(this.state)
+  }
+
   initialisieren() {
     let staffel1 = Modell.gruppeHinzufuegen("Staffel1")
     let film1 = staffel1.artikelHinzufuegen("Mobiles Armee Chirurgie Hospital – Pilot\t")
@@ -57,14 +66,16 @@ class App extends React.Component {
 
   }
 
-
   einkaufenAufZuKlappen() {
     let neuerZustand = !this.state.einkaufenAufgeklappt
-    this.setState({einkaufenAufgeklappt: neuerZustand})
+    const aufklappZustand = {einkaufenAufgeklappt: neuerZustand}
+    this.setState(aufklappZustand)
   }
 
   erledigtAufZuKlappen() {
-    this.setState({erledigtAufgeklappt: !this.state.erledigtAufgeklappt})
+    let neuerZustand = !this.state.erledigtAufgeklappt
+    const aufklappZustand = {erledigtAufgeklappt: neuerZustand}
+    this.setState(aufklappZustand)
   }
 
   artikelChecken = (artikel) => {
@@ -90,6 +101,13 @@ class App extends React.Component {
     Modell.aktiveGruppe = gruppe
     Modell.informieren("[App] Gruppe \"" + gruppe.name + "\" ist nun aktiv")
     this.setState({aktiveGruppe: Modell.aktiveGruppe})
+  }
+
+  closeSortierDialog = (reihenfolge, sortieren) => {
+    if (sortieren) {
+      Modell.sortieren(reihenfolge)
+    }
+    this.setState({showSortierDialog: false})
   }
 
   render() {
@@ -125,10 +143,15 @@ class App extends React.Component {
         onDialogClose={() => this.setState({showGruppenDialog: false})}/>
     }
 
+    let sortierDialog = ""
+    if (this.state.showSortierDialog) {
+      sortierDialog = <SortierDialog onDialogClose={this.closeSortierDialog}/>
+    }
+
     return (
       <div id="container">
         <header>
-          <h1>Einkaufsliste</h1>
+          <h1>Watchlist</h1>
           <label
             className="mdc-text-field mdc-text-field--filled mdc-text-field--with-trailing-icon mdc-text-field--no-label">
             <span className="mdc-text-field__ripple"></span>
@@ -175,7 +198,8 @@ class App extends React.Component {
             <span className="material-icons">bookmark_add</span>
             <span className="mdc-button__ripple"></span> Gruppen
           </button>
-          <button className="mdc-button mdc-button--raised">
+          <button className="mdc-button mdc-button--raised"
+                  onClick={() => this.setState({showSortierDialog: true})}>
             <span className="material-icons">sort</span>
             <span className="mdc-button__ripple"></span> Sort
           </button>
@@ -186,6 +210,7 @@ class App extends React.Component {
         </footer>
 
         {gruppenDialog}
+        {sortierDialog}
       </div>
     )
   }
